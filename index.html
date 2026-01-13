@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SketchUp Dynamic Components by Worqbox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --deep-space-blue: #0B1E3D;
+      --solar-ember: #FF6A2D;
+      --neon-arc-blue: #00B4FF;
+      --violet-pulse: #744DFF;
+      --soft-sky-gray: #E6ECF2;
+      --pure-white: #FFFFFF;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--soft-sky-gray);
+      color: var(--deep-space-blue);
+    }
+
+    header {
+      background-color: var(--deep-space-blue);
+      color: var(--pure-white);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--neon-arc-blue);
+    }
+
+    .section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .highlight {
+      background-color: var(--solar-ember);
+      color: var(--pure-white);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .tiers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .tier {
+      flex: 1 1 300px;
+      background-color: var(--pure-white);
+      border: 2px solid var(--violet-pulse);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(11, 30, 61, 0.1);
+    }
+
+    .tier h3 {
+      color: var(--violet-pulse);
+      margin-top: 0;
+    }
+
+    .media-holder {
+      margin: 2rem 0;
+      background-color: var(--soft-sky-gray);
+      border: 2px dashed var(--neon-arc-blue);
+      padding: 2rem;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .media-holder p {
+      margin: 0;
+      font-style: italic;
+      color: var(--deep-space-blue);
+    }
+
+    footer {
+      background-color: var(--deep-space-blue);
+      color: var(--pure-white);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .social-links a {
+      margin: 0 1rem;
+      color: var(--solar-ember);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .funky-button {
+      background-color: var(--neon-arc-blue);
+      color: var(--deep-space-blue);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .funky-button:hover {
+      transform: scale(1.1) rotate(-2deg);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SketchUp Dynamic Components</h1>
+    <p>Built by Worqbox • Powered by Community • Ready for You</p>
+  </header>
+
+  <div class="section">
+    <span class="highlight">Smart. Modular. Fun.</span>
+    <p>Whether you're a designer, contractor, or curious creator — dynamic components can save you time, reduce errors, and make your SketchUp workflow way more awesome. Choose your tier, submit a request, and let's build something cool together.</p>
+
+    <div class="tiers">
+      <div class="tier">
+        <h3>Community Component</h3>
+        <p>Free to request. Shared with everyone. Tip if you like it!</p>
+      </div>
+      <div class="tier">
+        <h3>Private Build</h3>
+        <p>Custom component, yours to keep. Great for studios and SMEs.</p>
+      </div>
+      <div class="tier">
+        <h3>Premium Video Build</h3>
+        <p>Get the component + a full build-along tutorial. Learn and reuse.</p>
+      </div>
+    </div>
+
+    <div class="media-holder">
+      <p>[Animated GIF or demo video goes here]</p>
+    </div>
+
+    <button class="funky-button" onclick="alert('Let’s build something awesome!')">Request a Component</button>
+
+    <div class="media-holder">
+      <p>[YouTube walkthrough or testimonial video]</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Follow Worqbox for updates and new components:</p>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </footer>
+
+</body>
+</html>
