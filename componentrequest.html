@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Request a Dynamic Component</title>
+
+<style>
+  :root {
+    --deep-space-blue: #0B1E3D;
+    --solar-ember: #FF6A2D;
+    --neon-arc-blue: #00B4FF;
+    --violet-pulse: #744DFF;
+    --soft-sky-gray: #E6ECF2;
+    --pure-white: #FFFFFF;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--soft-sky-gray);
+    font-family: "Open Sans", sans-serif;
+    color: var(--deep-space-blue);
+  }
+
+  header {
+    background: var(--deep-space-blue);
+    color: var(--pure-white);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+  }
+
+  .form-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: var(--pure-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(11, 30, 61, 0.15);
+    border: 3px solid var(--violet-pulse);
+  }
+
+  .form-container h2 {
+    margin-top: 0;
+    color: var(--violet-pulse);
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border-radius: 8px;
+    border: 2px solid var(--deep-space-blue);
+    font-size: 1rem;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .tier-box {
+    background: var(--soft-sky-gray);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px dashed var(--neon-arc-blue);
+    margin-top: 1rem;
+  }
+
+  .funky-button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 1rem;
+    background: var(--solar-ember);
+    color: var(--pure-white);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .funky-button:hover {
+    transform: scale(1.05) rotate(-1deg);
+    background: var(--neon-arc-blue);
+    color: var(--deep-space-blue);
+  }
+
+  .fun-hint {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--solar-ember);
+    margin-top: 0.3rem;
+  }
+
+  .sparkle {
+    animation: sparkle 1.8s infinite ease-in-out;
+  }
+
+  @keyframes sparkle {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+  }
+</style>
+
+<script>
+  function celebrate() {
+    const btn = document.getElementById("submitBtn");
+    btn.innerText = "✨ Request Saved (Well… almost) ✨";
+  }
+</script>
+
+</head>
+<body>
+
+<header>
+  <h1>Request Your Dynamic Component</h1>
+  <p class="sparkle">Let’s build something clever, modular, and fun</p>
+</header>
+
+<div class="form-container">
+  <h2>Tell Me What You Need</h2>
+
+  <label>Your Name</label>
+  <input type="text" placeholder="Who’s making the magic?" />
+
+  <label>Email</label>
+  <input type="email" placeholder="Where should I send your component?" />
+
+  <label>Component Name</label>
+  <input type="text" placeholder="e.g., Adjustable Cabinet, Parametric Window…" />
+
+  <label>Describe What It Should Do</label>
+  <textarea placeholder="Tell me the behaviours, dimensions, presets, or anything else you want."></textarea>
+
+  <label>Choose Your Tier</label>
+  <select>
+    <option>Community Component (Free / Tip)</option>
+    <option>Private Component (Paid)</option>
+    <option>Premium Build + Video (Paid+)</option>
+  </select>
+
+  <div class="tier-box">
+    <p><strong>Fun hint:</strong> The more detail you give, the smarter the component becomes.</p>
+  </div>
+
+  <button id="submitBtn" class="funky-button" onclick="celebrate()">Submit Request</button>
+</div>
+
+</body>
+</html>
