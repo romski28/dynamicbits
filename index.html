@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -23,12 +24,13 @@
       color: var(--deep-space-blue);
     }
 
-    header {
-      background-color: var(--deep-space-blue);
-      color: var(--pure-white);
-      padding: 2rem;
-      text-align: center;
-    }
+	header { 
+	  color: var(--deep-space-blue); 
+	  padding: 2rem 1rem; 
+	  text-align: right; 
+	  width:100%;
+
+	}
 
     header h1 {
       font-family: 'Orbitron', sans-serif;
@@ -39,17 +41,28 @@
     header p {
       font-size: 1.2rem;
       color: var(--neon-arc-blue);
+	  width: 100%;
     }
+	
+	.strap {
+		display: flex; 
+		justify-content: left; 
+		align-items: left; 
+		background: url('assets/img/logopacking.png') center center repeat; 
+		background-size: contain; 
+		padding: 0;
+		border-bottom: 4px solid var(--solar-ember); 
+	}
 
     .section {
       padding: 2rem;
       max-width: 1000px;
       margin: auto;
+	  text-align: center;
     }
 
     .highlight {
-      background-color: var(--solar-ember);
-      color: var(--pure-white);
+      color: var(--solar-ember);
       padding: 0.5rem 1rem;
       border-radius: 8px;
       display: inline-block;
@@ -69,6 +82,11 @@
       border-radius: 10px;
       padding: 1rem;
       box-shadow: 0 0 10px rgba(11, 30, 61, 0.1);
+  		display: flex; 
+		justify-content: left; 
+		align-items: left; 
+		background-size: contain; 
+		
     }
 
     .tier h3 {
@@ -122,28 +140,40 @@
   </style>
 </head>
 <body>
+	<div class="strap"> 
+		<img src="assets/img/dynamicbits-logo.png" alt="DynamicBits logo" style=" max-width: 100%; height: 100%; width: 160px; "/> 
+
 
   <header>
-    <h1>SketchUp Dynamic Components</h1>
+    <h1>SketchUp<br>Dynamic<br>Components</h1>
     <p>Built by Worqbox • Powered by Community • Ready for You</p>
-  </header>
-
-  <div class="section">
     <span class="highlight">Smart. Modular. Fun.</span>
+  </header>
+  </div>
+  <div class="section">
     <p>Whether you're a designer, contractor, or curious creator — dynamic components can save you time, reduce errors, and make your SketchUp workflow way more awesome. Choose your tier, submit a request, and let's build something cool together.</p>
 
     <div class="tiers">
       <div class="tier">
-        <h3>Community Component</h3>
-        <p>Free to request. Shared with everyone. Tip if you like it!</p>
+		<img src="assets/img/community.png" height=100px width=auto>
+		<div>
+			<h3>Community Component</h3>
+			<p>Free to request. Shared with everyone. Tip if you like it!</p>
+		</div>
       </div>
       <div class="tier">
-        <h3>Private Build</h3>
-        <p>Custom component, yours to keep. Great for studios and SMEs.</p>
-      </div>
+		<img src="assets/img/private.png" height=100px width=auto>
+		<div>        
+			<h3>Private Build</h3>
+			<p>Custom component, yours to keep. Great for studios and SMEs.</p>
+		</div>
+	  </div>
       <div class="tier">
-        <h3>Premium Video Build</h3>
-        <p>Get the component + a full build-along tutorial. Learn and reuse.</p>
+		<img src="assets/img/video.png" height=100px width=auto>
+		<div>        
+			<h3>Premium Video Build</h3>
+			<p>Get the component + a full build-along tutorial. Learn and reuse.</p>
+		</div>
       </div>
     </div>
 
@@ -151,7 +181,7 @@
       <p>[Animated GIF or demo video goes here]</p>
     </div>
 
-    <button class="funky-button" onclick="alert('Let’s build something awesome!')">Request a Component</button>
+    <button class="funky-button" onclick="window.location.href = 'componentrequest.html';">Request a Component</button>
 
     <div class="media-holder">
       <p>[YouTube walkthrough or testimonial video]</p>
