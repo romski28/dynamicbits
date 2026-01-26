@@ -116,12 +116,53 @@
   @keyframes pulseArrow { 0% { transform: translateX(0); } 50% { transform: translateX(4px); } 100% { transform: translateX(0); } } .funky-button::after { content: " ↔"; animation: pulseArrow 1.2s infinite ease-in-out; }
 </style>
 
-<script>
-  function celebrate() {
-    const btn = document.getElementById("submitBtn");
-    btn.innerText = "✨ Request Saved (Well… almost) ✨";
-  }
-</script>
+	<script>
+		function celebrate() {
+			const btn = document.getElementById("submitBtn");
+			btn.innerText = "✨ Request Sent ✨";
+		}
+	</script>
+	<script 
+		src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js">
+	</script>
+
+	<script>
+	function sendDynamicEmail() {
+	  // Fire confetti first
+	  setTimeout(() => {
+		confetti({
+		  particleCount: 120,
+		  spread: 70,
+		  origin: { y: 0.6 }
+		});
+	  }, 300); // small delay so the user sees it
+
+	  // Then delay the mailto so confetti is visible
+	  setTimeout(() => {
+		const name = document.getElementById("name").value;
+		const email = document.getElementById("email").value;
+		const component = document.getElementById("component").value;
+		const details = document.getElementById("details").value;
+		const tier = document.getElementById("tier").value;
+
+		const subject = `DynamicBits Request: ${component || "New Component"}`;
+
+		const body =
+		  "Name: " + name + "\n" +
+		  "Email: " + email + "\n" +
+		  "Component: " + component + "\n" +
+		  "Tier: " + tier + "\n\n" +
+		  "Details:\n" + details + "\n";
+
+		const mailtoLink =
+		  "mailto:dynamicbits@worqbox.online"
+		  + "?subject=" + encodeURIComponent(subject)
+		  + "&body=" + encodeURIComponent(body);
+
+		window.location.href = mailtoLink;
+	  }, 900); // confetti plays for ~0.7s before email client opens
+	}
+	</script>
 
 </head>
 <body>
@@ -141,19 +182,19 @@
   <h2>Tell Me What You Need</h2>
 
   <label>Your Name</label>
-  <input type="text" placeholder="Who’s making the magic?" />
+  <input type="text" id="name" placeholder="Who’s making the magic?" />
 
   <label>Email</label>
-  <input type="email" placeholder="Where should I send your component?" />
+  <input type="text" id="email" placeholder="Where should I send your component?" />
 
   <label>Component Name</label>
-  <input type="text" placeholder="e.g., Adjustable Cabinet, Parametric Window…" />
+  <input type="text" id="component" placeholder="e.g., Adjustable Cabinet, Parametric Window…" />
 
   <label>Describe What It Should Do</label>
-  <textarea placeholder="Tell me the behaviours, dimensions, presets, or anything else you want."></textarea>
+  <textarea placeholder="Tell me the behaviours, dimensions, presets, or anything else you want." id="details"></textarea>
 
   <label>Choose Your Tier</label>
-  <select>
+  <select id="tier">
     <option>Community Component (Free / Tip)</option>
     <option>Private Component (Paid)</option>
     <option>Premium Build + Video (Paid+)</option>
@@ -163,9 +204,27 @@
     <p><strong>Fun hint:</strong> The more detail you give, the smarter the component becomes.</p>
   </div>
 
-  <button id="submitBtn" class="funky-button" onclick="celebrate()">Submit Request</button>
-  <br/>&nbsp;<br/><center>
-  <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="romski" data-color="#FFDD00" data-emoji="☕"  data-font="Lato" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+  <button id="submitBtn" class="funky-button" onclick="celebrate();sendDynamicEmail()">Submit Request</button>
+   <br/>&nbsp;<br/><center> 
+
+	<script 
+		type="text/javascript" 
+		src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+		data-name="bmc-button" 
+		data-slug="romski" 
+		data-color="#FFDD00" 
+		data-emoji="☕"  
+		data-font="Lato" 
+		data-text="Buy me a coffee" 
+		data-outline-color="#000000" 
+		data-font-color="#000000" 
+		data-coffee-color="#ffffff">
+	</script>
+
+  
+  
+
+
   </center>
 </div>
 
