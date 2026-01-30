@@ -288,6 +288,21 @@
     color: var(--muted);
     font-size: 0.82rem;
   }
+  
+      .funky-button {
+      background-color: var(--neon-arc-blue);
+      color: var(--deep-space-blue);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .funky-button:hover {
+      transform: scale(1.1) rotate(-2deg);
+    }
 
   /* Lightbox */
   #lightbox{
@@ -348,7 +363,10 @@
 </head>
 <body>
 	<div class="strap">
-		<img src="assets/img/dynamicbits-logo_long.png" alt="DynamicBits logo" style="width: 8em; height: 4em"> <br>
+		<a href="index.html">
+			<img src="assets/img/dynamicbits-logo_long.png" alt="DynamicBits logo" style="width: 8em; height: 4em"> 
+		</a>
+		<br>
 
 		<p style="color: #000;">Built by Worqbox • Powered by Community • Ready for You</p>
 		<span class="highlight">Smart. Modular. Fun.</span>
@@ -400,7 +418,10 @@
     <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
   </button>
 </div>
-
+<center>
+	    <button class="funky-button" onclick="window.location.href = 'index.html';">Back to DynamicBits home page</button>
+</center>
+</br></br>
 <script>
 /* =========================
    JSON DATA (inline for now)
