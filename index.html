@@ -127,7 +127,7 @@
   :root {
     /* Tweak these if you like */
     --card-width: 150px;
-    --card-height: 210px;
+    --card-height: 267px;
 
     /* Tighter base radius; each step uses a multiple of this */
     --fan-radius-per-step: 70px;  /* distance per step away from center */
@@ -138,8 +138,6 @@
   }
 
   body {
-    display: grid;
-    place-items: center;
     min-height: 100svh;
     background: #0e0f12;
   }
@@ -215,10 +213,10 @@
 		<p>Built by Worqbox • Powered by Community • Ready for You</p>
 		<span class="highlight">Smart. Modular. Fun.</span>
 	</div>
-    <div class="section" style="height:300px">
+    <div class="section" style="height:300px" id="table">
 	  <h1 style="color: #ffff">Play Top Comps. Collect them all!</br></br></br></br></h1>
 	  <div class="fan" id="cardFan"></div>
-
+		<a href="communitylibrary.html">Check out the library now!</a>
 	</div>
 
 	<div class="section">
@@ -240,7 +238,7 @@
 			<img src="assets/img/private.png" height=100px width=auto>
 			<div>        
 				<h3>Private Build</h3>
-				<p>Custom component, yours to keep, at a prise.<br>Great for studios and SMEs.</p>
+				<p>Custom component, yours to keep, at a price.<br>Great for studios and SMEs.</p>
 			</div>
 		</div>
 		<div class="tier">
