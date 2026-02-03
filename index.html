@@ -15,6 +15,8 @@
       --violet-pulse: #744DFF;
       --soft-sky-gray: #E6ECF2;
       --pure-white: #FFFFFF;
+	  --charcole-grey: #3F4246;
+	  --deep-grey: #2d2d2e;
     }
 
     body {
@@ -28,6 +30,12 @@
 		color: var(--neon-arc-blue);
 	}
 	
+	h2 {
+		background-color: var(--solar-ember);
+		color: var(--deep-grey);
+		padding :10px;
+	}
+	
 	.strap {
 
 		justify-content: left; 
@@ -36,6 +44,10 @@
 		background-size: contain; 
 		padding: 1rem 2rem;
 		border-bottom: 4px solid var(--solar-ember); 
+	}
+	
+	.softgreyback {
+		background-color: var(--soft-sky-gray);
 	}
 
 	@media (max-width: 600px) {
@@ -49,7 +61,12 @@
       max-width: 1000px;
       margin: auto;
 	  text-align: center;
+	  color: var(--pure-white);
     }
+
+	.textleft {
+		text-align: left;
+	}
 
     .highlight {
       color: var(--solar-ember);
@@ -89,6 +106,7 @@
       padding: 2rem;
       text-align: center;
       border-radius: 10px;
+	  max-height: 400px;
     }
 
     .media-holder p {
@@ -97,6 +115,11 @@
       color: var(--deep-space-blue);
     }
 
+	video {
+		width:100%;
+		max-width: 400px;
+	}
+	
     footer {
       background-color: var(--deep-space-blue);
       color: var(--pure-white);
@@ -144,7 +167,7 @@
     background: #0e0f12;
   }
 
-  .table {
+  .cardhand {
     position: relative;
     width: min(90vw, 520px);
     height: min(60vh, 380px);
@@ -207,52 +230,133 @@
 </style>
 </head>
 <body>
+
 	<div class="strap">
 		<img src="assets/img/dynamicbits-logo_long.png" alt="DynamicBits logo" style="width: 8em; height: 4em"> <br>
 
-			<h1>SketchUp<br>Dynamic<br>Components</h1> <br>
+			<h1>DynamicBits — Smart, Modular SketchUp Components</h1>
 
-		<p>Built by <a href="https://worqbox.online">Worqbox</a> • Powered by Community • Ready for You</p>
-		<span class="highlight">Smart. Modular. Fun.</span>
+		<p>Build faster. Model cleaner. Request the components you need.</p>
+		<span class="highlight">A growing library of parametric SketchUp components — free to request, customizable to your workflow, and built with the community.</span>
 	</div>
-    <div class="section" style="height:300px" id="table">
-	  <h1 style="color: #ffff">Play Top Comps. Collect them all!</br></br></br></br></h1>
-	  <div class="fan" id="cardFan"></div>
-		
-	</div>
-	</br>
-		
-	<div class="section">
+
+    <div class="section" id="videobooth">
+      <p><video controls autoplay loop muted playsinline> <source src="assets/video/dynamicbits.mp4" type="video/mp4"> Your browser does not support the video tag. </video></p>
 	    <button class="funky-button" onclick="window.location.href = 'communityLibrary.html';">View our library now</button>
-		<p style="color: #ffff"><br/>Whether you're a designer, contractor, or curious creator — dynamic components can save you time, reduce errors, and make your SketchUp workflow way more awesome. Choose your tier, submit a request, and let's build something cool together.</p>
-
-    <div class="media-holder">
-      <p><video width="100%" height=auto controls autoplay loop muted playsinline> <source src="assets/video/dynamicbits.mp4" type="video/mp4"> Your browser does not support the video tag. </video></p>
     </div>
+
+    <div class="section textleft" id="whydynamicbits">
+		<h2>Why DynamicBits exists</h2>
+		SketchUp is powerful, but repetitive modelling slows everyone down.
+		DynamicBits makes your workflow smoother with:
+		<ul><li>
+		Smart, parametric components
+		</li><li>
+		Clean, predictable controls
+		</li><li>
+		Consistent geometry across projects
+		</li><li>
+		Community‑driven development
+		</li><li>
+		Zero plugins required
+		</li></ul>
+		Whether you’re a hobbyist, educator, or studio, DynamicBits helps you build more in less time.
+	</div>
 	
+    <div class="section" id="howitworks">
+	<h2>How It Works - 123</h2>
+		<table col=2>
+			<tr><td width=><b><font size=+3>1</font></b></td>
+				<td>Choose your tier<br>Free community components, private builds, or premium build‑along tutorials.</td></tr></table>
+
+		<b><font size=+3>2</font></b><br>Submit your request<br>
+		Tell us what you need — a wall, a window, a cabinet, a full system.<br>
+
+		<b><font size=+3>3</font></b><br>Receive your component<br>
+		Delivered as a clean, parametric SketchUp component ready to drop into your model.<br>
+	</div>
+
+			
+	<div class="section">
+		<h2>The Tiers</h2>
+		<p style="color: var(--pure-white);"><br/>Whether you're a designer, contractor, or curious creator — dynamic components can save you time, reduce errors, and make your SketchUp workflow way more awesome. Choose your tier, submit a request, and let's build something cool together.</p>
 		<div class="tiers">
 			<div class="tier">
 				<img src="assets/img/community.png" height=100px width=auto>
 				<div>
 					<h3>Community Component</h3>
-					<p>Free to request (but keep it real).<br>Shared with everyone.<br>Buy me a coffee if you like it!</p>
+					<p style="color: var(--deep-grey);">A component built from community requests.<br>Best for Hobbyists, learners, SketchUp fans<br>Free, but buy me a coffee if you like it!</p>
+					<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="romski" data-color="#FFDD00" data-emoji="☕"  data-font="Lato" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
 				</div>
 			</div>
 		<div class="tier">
 			<img src="assets/img/private.png" height=100px width=auto>
 			<div>        
 				<h3>Private Build</h3>
-				<p>Custom component, yours to keep, at a price.<br>Great for studios and SMEs.</p>
+				<p style="color: var(--deep-grey);">Custom component, yours to keep, at a price.<br>Great for studios and SMEs.</p>
 			</div>
 		</div>
 		<div class="tier">
 			<img src="assets/img/video.png" height=100px width=auto>
 			<div>        
 				<h3>Premium Video Build</h3>
-				<p>Get the component + a full build-along tutorial.<br>Learn and reuse.</p>
+				<p style="color: var(--deep-grey);">Get the component + a full build-along tutorial at an additional cost.<br>For anyone, but especially Educators, teams, advanced users.</p>
 			</div>
 		</div>
     </div>
+	
+    <div class="section" style="height:300px" id="cardhand">
+	  <h1 style="color: #ffff">Play Top Comps. Collect them all!</br></br></br></br></h1>
+	  <div class="fan" id="cardFan"></div>
+		
+	</div>	
+	
+    <div class="section" id="foundernote">
+		<h2>A note from the creator</h2>
+		<p>Hi — I’m the founder of Worqbox, and DynamicBits is something I’ve wanted for years: a clean, modern library of SketchUp components that behave the way you wish they did.</p>
+
+		<p>No plugins.<br/>
+		No bloat.<br/>
+		Just smart, parametric components that save time and make modelling fun again.</p>
+		
+		<p>DynamicBits is community‑driven — your ideas shape what gets built next.<br/>
+		If you’ve got a component in mind, I’d love to hear it.<br/>
+	</div>
+	
+    <div class="section" id="trust">
+		<h2>Why people trust DynamicBits</h2>
+		<p>Built by an experienced SketchUp designer<br/>
+
+		Transparent development process<br/>
+
+		Clear, predictable component behaviour<br/>
+
+		No hidden costs or subscriptions<br/>
+
+		Community requests are genuinely considered<br/>
+
+		Components are tested before release</p>
+	</div>
+	
+    <div class="section" id="roundup">
+		<h2>So just to round off, what dose DynamicBits offers...</h2>
+		<p>A free, growing library of smart SketchUp components<br/>
+
+A way to request new components<br/>
+
+Paid private builds for studios and professionals<br/>
+
+Premium build‑along tutorials for those who want to learn the craft<br/>
+
+A community‑driven roadmap<br/>
+
+A fun, collectible “Smart Bits” card system for each component</p>
+	</div>
+	
+	
+
+
+	</br>
 
 	<br/>
     <button class="funky-button" onclick="window.location.href = 'componentrequest.html';">Request a Component</button>
@@ -292,7 +396,7 @@
   const fanInDuration  = parseTimeVar('--fan-in-duration')  || 450;
 
   const fanEl = document.getElementById('cardFan');
-  const tableEl = document.getElementById('table');
+  const tableEl = document.getElementById('cardhand');
 
   /**
    * Helpers
