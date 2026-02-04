@@ -1,0 +1,42 @@
+[
+  {
+    "id": "c1",
+    "title": "Solid partition / wall",
+    "image": "assets/img/1.webp",
+    "skpUrl": "https://drive.google.com/file/d/166G7Ftw8YVFQmi9fR3G8m17A7SJfWENc/view?usp=sharing",
+    "category": "Fitout",
+    "tags": ["component", "set A"]
+  },
+  {
+    "id": "c2",
+    "title": "Solid partition with skirting",
+    "image": "assets/img/2.webp",
+    "skpUrl": "https://drive.google.com/file/d/1DcVeenLFIfVN0gAUYQrrR6GjFD8bhj-4/view?usp=sharing",
+    "category": "Fitout",
+    "tags": ["component", "set A"]
+  },
+  {
+    "id": "PRT_SLD_DEM",
+    "title": "Partition to demolish",
+    "image": "assets/img/3.webp",
+    "skpUrl": "https://drive.google.com/file/d/1uH96lGZbPbgCsnMdfVwXO7Rl-kSOLGu3/view?usp=sharing",
+    "category": "Fitout",
+    "tags": ["component", "set B"]
+  },
+  {
+    "id": "c4",
+    "title": "Solid partition with skirting and cornice",
+    "image": "assets/img/4.webp",
+    "skpUrl": "https://drive.google.com/file/d/1Lx67hrd8w63ImLoVHX_ohx5awerzkEbf/view?usp=sharing",
+    "category": "Fitout",
+    "tags": ["component", "set B"]
+  },
+  {
+    "id": "c5",
+    "title": "Shaker style paneling",
+    "image": "assets/img/5.webp",
+    "skpUrl": "https://drive.google.com/file/d/1vM9rLYc8eK6-pl0mK2jTjvXZl-QdstXD/view?usp=sharing",
+    "category": "Fitout",
+    "tags": ["component", "set C"]
+  }
+]
