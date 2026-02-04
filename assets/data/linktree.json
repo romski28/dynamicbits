@@ -1,0 +1,202 @@
+{
+  "brands": [
+    {
+      "id": "worqbox",
+      "name": "Worqbox",
+      "tagline": "Design • Build • Innovate",
+      "logo": "assets/img/worqbox_Logo_long_transparent.png",
+      "colors": {
+        "primary": "#E6863C",
+        "secondary": "#D0672D",
+        "background": "#FAF4EE",
+        "text": "#2D2D2E"
+      },
+      "social": [
+        {
+          "platform": "facebook",
+          "url": "https://www.facebook.com/people/Worqbox/61579586065889/",
+          "enabled": true
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/worqboxhk",
+          "enabled": true
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/worqboxhk",
+          "enabled": true
+        },
+        {
+          "platform": "linkedin",
+          "url": "",
+          "enabled": false
+        },
+        {
+          "platform": "reddit",
+          "url": "",
+          "enabled": false
+        }
+      ],
+      "links": [
+        {
+          "title": "Home",
+          "url": "https://worqbox.online",
+          "icon": "🌐"
+        },
+        {
+          "title": "Facebook",
+          "url": "https://www.facebook.com/people/Worqbox/61579586065889/",
+          "icon": "📘"
+        },
+        {
+          "title": "Instagram",
+          "url": "https://www.instagram.com/worqboxhk",
+          "icon": "📸"
+        },
+        {
+          "title": "X / Twitter",
+          "url": "https://x.com/worqboxhk",
+          "icon": "🐦"
+        },
+        {
+          "title": "YouTube",
+          "url": "https://www.youtube.com/@connectedspacedonline",
+          "icon": "📺"
+        }
+      ]
+    },
+    {
+      "id": "connectedspaces",
+      "name": "Connected Spaces",
+      "tagline": "Smart. Modular. Connected.",
+      "logo": "assets/img/connectedspc_logo.png",
+      "colors": {
+        "primary": "#00B4FF",
+        "secondary": "#744DFF",
+        "background": "#0B1E3D",
+        "text": "#FFFFFF"
+      },
+      "social": [
+        {
+          "platform": "facebook",
+          "url": "https://www.facebook.com/people/Worqbox/61579586065889/",
+          "enabled": true
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/worqboxhk",
+          "enabled": true
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/worqboxhk",
+          "enabled": true
+        },
+        {
+          "platform": "linkedin",
+          "url": "",
+          "enabled": false
+        },
+        {
+          "platform": "reddit",
+          "url": "",
+          "enabled": false
+        }
+      ],
+      "links": [
+        {
+          "title": "Website",
+          "url": "https://connectedspacesonline.com",
+          "icon": "🌐"
+        },
+        {
+          "title": "Facebook",
+          "url": "https://www.facebook.com/people/Worqbox/61579586065889/",
+          "icon": "📘"
+        },
+        {
+          "title": "Instagram",
+          "url": "https://www.instagram.com/worqboxhk",
+          "icon": "📸"
+        },
+        {
+          "title": "YouTube Channel",
+          "url": "https://www.youtube.com/@connectedspacedonline",
+          "icon": "📺"
+        },
+        {
+          "title": "X / Twitter",
+          "url": "https://x.com/worqboxhk",
+          "icon": "🐦"
+        }
+      ]
+    },
+    {
+      "id": "dynamicbits",
+      "name": "DynamicBits",
+      "tagline": "Smart Components for SketchUp",
+      "logo": "assets/img/dynamicbits-logo.png",
+      "colors": {
+        "primary": "#FF6A2D",
+        "secondary": "#744DFF",
+        "background": "#0B1E3D",
+        "text": "#FFFFFF"
+      },
+      "social": [
+        {
+          "platform": "facebook",
+          "url": "https://www.facebook.com/people/Worqbox/61579586065889/",
+          "enabled": true
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/worqboxhk",
+          "enabled": true
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/worqboxhk",
+          "enabled": true
+        },
+        {
+          "platform": "linkedin",
+          "url": "",
+          "enabled": false
+        },
+        {
+          "platform": "reddit",
+          "url": "",
+          "enabled": false
+        }
+      ],
+      "links": [
+        {
+          "title": "Home",
+          "url": "index.html",
+          "icon": "🏠"
+        },
+        {
+          "title": "Component Gallery",
+          "url": "communityLibrary.html",
+          "icon": "🎨"
+        },
+        {
+          "title": "Request Component",
+          "url": "componentrequest.html",
+          "icon": "✨"
+        },
+        {
+          "title": "YouTube Tutorials",
+          "url": "https://www.youtube.com/watch?v=-bGARNL3ndQ",
+          "icon": "📺"
+        },
+        {
+          "title": "Support / Coffee",
+          "url": "https://www.buymeacoffee.com/romski",
+          "icon": "☕"
+        }
+      ]
+    }
+  ]
+}
