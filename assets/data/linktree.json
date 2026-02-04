@@ -4,7 +4,7 @@
       "id": "worqbox",
       "name": "Worqbox",
       "tagline": "Design • Build • Innovate",
-      "logo": "assets/img/worqbox_Logo_long_transparent.png",
+      "logo": "assets/img/worqbox_Logo_long_transparent.webp",
       "colors": {
         "primary": "#E6863C",
         "secondary": "#D0672D",
@@ -45,24 +45,24 @@
           "icon": "🌐"
         },
         {
-          "title": "Facebook",
-          "url": "https://www.facebook.com/people/Worqbox/61579586065889/",
-          "icon": "📘"
+          "title": "Smart Storage Indexing with PowerApps—No Premium Needed",
+          "url": "https://smartspacestories.blogspot.com/2025/11/boxmate-by-worqbox-smart-storage.html",
+          "icon": "📦"
         },
         {
-          "title": "Instagram",
-          "url": "https://www.instagram.com/worqboxhk",
-          "icon": "📸"
+          "title": "Smart Tech and Sustainability: Enabler, Illusion, or Something More?",
+          "url": "https://smartspacestories.blogspot.com/2025/09/smart-tech-and-sustainability-enabler.html",
+          "icon": "💚"
         },
         {
-          "title": "X / Twitter",
-          "url": "https://x.com/worqboxhk",
-          "icon": "🐦"
+          "title": "Hong Kong’s Cybersecurity Ordinance Has Begun",
+          "url": "https://smartspacestories.blogspot.com/2025/09/hong-kongs-cybersecurity-countdown-has.html",
+          "icon": "🛡️"
         },
         {
-          "title": "YouTube",
-          "url": "https://www.youtube.com/@connectedspacedonline",
-          "icon": "📺"
+          "title": "From Raw Data to Operational Clarity",
+          "url": "https://smartspacestories.blogspot.com/2025/11/from-raw-data-to-operational-clarity.html",
+          "icon": "📊"
         }
       ]
     },
@@ -70,7 +70,7 @@
       "id": "connectedspaces",
       "name": "Connected Spaces",
       "tagline": "Smart. Modular. Connected.",
-      "logo": "assets/img/connectedspc_logo.png",
+      "logo": "assets/img/connectedspc_logo.webp",
       "colors": {
         "primary": "#00B4FF",
         "secondary": "#744DFF",
@@ -111,24 +111,25 @@
           "icon": "🌐"
         },
         {
-          "title": "Facebook",
-          "url": "https://www.facebook.com/people/Worqbox/61579586065889/",
-          "icon": "📘"
+          "title": "Smart Plugs Meet Air Quality",
+          "url": "https://smartspacestories.blogspot.com/2025/12/smart-plugs-meet-air-quality.html",
+          "icon": "🔌"
+        
         },
         {
-          "title": "Instagram",
-          "url": "https://www.instagram.com/worqboxhk",
-          "icon": "📸"
+          "title": "Choosing the Right Dashboard — and Building Something Smarter Together",
+          "url": "https://smartspacestories.blogspot.com/2025/11/choosing-right-dashboard-and-building.html",
+          "icon": "📊"
         },
         {
-          "title": "YouTube Channel",
-          "url": "https://www.youtube.com/@connectedspacedonline",
-          "icon": "📺"
+          "title": "Smart Home Starter Guide for Hong Kong",
+          "url": "https://smartspacestories.blogspot.com/2025/10/smart-home-starter-guide-for-hong-kong.html",
+          "icon": "🏠"
         },
         {
-          "title": "X / Twitter",
-          "url": "https://x.com/worqboxhk",
-          "icon": "🐦"
+          "title": "Air That’s Fresh, Clean, and Safe",
+          "url": "https://smartspacestories.blogspot.com/2025/11/improving-indoor-air-quality-executive.html",
+          "icon": "🍃"
         }
       ]
     },
@@ -136,7 +137,7 @@
       "id": "dynamicbits",
       "name": "DynamicBits",
       "tagline": "Smart Components for SketchUp",
-      "logo": "assets/img/dynamicbits-logo.png",
+      "logo": "assets/img/dynamicbits-logo.webp",
       "colors": {
         "primary": "#FF6A2D",
         "secondary": "#744DFF",
@@ -179,7 +180,7 @@
         {
           "title": "Component Gallery",
           "url": "communityLibrary.html",
-          "icon": "🎨"
+          "icon": "🖼️"
         },
         {
           "title": "Request Component",
