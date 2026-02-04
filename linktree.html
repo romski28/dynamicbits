@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Worqbox • Connected Spaces • DynamicBits</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  body {
+    background: linear-gradient(135deg, #0B1E3D 0%, #2D2D2E 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .linktree-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .linktree-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--pure-white);
+  }
+
+  .linktree-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #FF6A2D, #00B4FF, #744DFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .linktree-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  .brand-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .brand-tabs {
+    display: none;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+
+  .tab-button {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--pure-white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tab-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .tab-button.active {
+    background: linear-gradient(135deg, #FF6A2D, #00B4FF);
+    border-color: transparent;
+    color: #FFFFFF;
+  }
+
+  .brand-card {
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  }
+
+  .brand-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .brand-logo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-logo img {
+    max-width: 180px;
+    max-height: 100px;
+    object-fit: contain;
+  }
+
+  .brand-logo-placeholder {
+    width: 180px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    opacity: 0.5;
+  }
+
+  .brand-name {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .brand-tagline {
+    text-align: center;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .social-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .social-btn img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+  }
+
+  .social-btn:hover:not(.disabled) {
+    transform: translateY(-3px);
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .brand-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .link-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .link-button:hover {
+    transform: translateX(5px);
+    border-color: currentColor;
+  }
+
+  .link-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .link-title {
+    flex-grow: 1;
+  }
+
+  .link-arrow {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .link-button:hover .link-arrow {
+    opacity: 1;
+  }
+
+  /* Worqbox styling */
+  .brand-card.worqbox {
+    background: #FAF4EE;
+    color: #2D2D2E;
+  }
+
+  .brand-card.worqbox .link-button {
+    background: linear-gradient(135deg, #E6863C, #D0672D);
+    color: #FFFFFF;
+  }
+
+  .brand-card.worqbox .link-button:hover {
+    background: linear-gradient(135deg, #D0672D, #E6863C);
+  }
+
+  /* Connected Spaces styling */
+  .brand-card.connectedspaces {
+    background: #E6ECF2;
+    color: #0B1E3D;
+  }
+
+  .brand-card.connectedspaces .link-button {
+    background: linear-gradient(135deg, #00B4FF, #744DFF);
+    color: #FFFFFF;
+  }
+
+  .brand-card.connectedspaces .link-button:hover {
+    background: linear-gradient(135deg, #744DFF, #00B4FF);
+  }
+
+  /* DynamicBits styling */
+  .brand-card.dynamicbits {
+    background: linear-gradient(135deg, #E6ECF2, #FFFFFF);
+    color: #0B1E3D;
+  }
+
+  .brand-card.dynamicbits .link-button {
+    background: linear-gradient(135deg, #FF6A2D, #744DFF);
+    color: #FFFFFF;
+  }
+
+  .brand-card.dynamicbits .link-button:hover {
+    background: linear-gradient(135deg, #744DFF, #FF6A2D);
+  }
+
+  @mebrand-tabs {
+      display: flex;
+    }
+
+    .brand-card {
+      display: none;
+    }
+
+    .brand-card.active {
+      display: block;
+    }
+
+  @media (max-width: 800px) {
+    .brand-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .linktree-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="linktree-container">
+  <div class="linktree-header">
+    <h1>Welcome to Our World</h1>
+    <p>Discover our projects and connect with us</p>
+  </div>
+
+  <div class="brand-tabs" id="brandTabs">
+    <!-- Tabs will be inserted here by JavaScript -->
+  </div>
+
+  <div class="brand-cards" id="brandCards">
+    <!-- Cards will be inserted here by JavaScript -->
+  </div>
+</div>
+
+<script>
+  // Check if screen is narrow (mobile)
+  function isNarrowScreen() {
+    return window.innerWidth <= 800;
+  }
+
+  // Update card visibility based on screen width
+  function updateCardVisibility() {
+    const cards = document.querySelectorAll('.brand-card');
+    const narrow = isNarrowScreen();
+    
+    if (narrow) {
+      // On mobile: only show active card
+      cards.forEach(card => {
+        card.style.display = card.classList.contains('active') ? 'block' : 'none';
+      });
+    } else {
+      // On desktop: show all cards
+      cards.forEach(card => {
+        card.style.display = 'block';
+      });
+    }
+  }
+
+  // Fetch and render the linktree data
+  fetch('assets/data/linktree.json')
+    .then(response => response.json())
+    .then(data => {
+      const cardContainer = document.getElementById('brandCards');
+      const tabContainer = document.getElementById('brandTabs');
+      
+      // Get URL parameter for brand selection
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedBrand = urlParams.get('brand') || 'worqbox';
+      
+      // Create tabs
+      data.brands.forEach(brand => {
+        const tab = document.createElement('button');
+        tab.className = `tab-button ${brand.id === selectedBrand ? 'active' : ''}`;
+        tab.textContent = brand.name;
+        tab.setAttribute('data-brand', brand.id);
+        tab.onclick = () => switchTab(brand.id);
+        tabContainer.appendChild(tab);
+      });
+      
+      // Create cards
+      data.brands.forEach(brand => {
+        const card = document.createElement('div');
+        card.className = `brand-card ${brand.id} ${brand.id === selectedBrand ? 'active' : ''}`;
+        card.id = `card-${brand.id}`;
+        card.setAttribute('data-brand', brand.id);
+        
+        // Build social buttons HTML
+        const socialIcons = {
+          facebook: 'https://simpleicons.org/icons/facebook.svg',
+          instagram: 'https://simpleicons.org/icons/instagram.svg',
+          x: 'https://simpleicons.org/icons/x.svg',
+          linkedin: 'https://simpleicons.org/icons/linkedin.svg',
+          reddit: 'https://simpleicons.org/icons/reddit.svg'
+        };
+        
+        const socialHTML = brand.social ? brand.social.map(social => {
+          if (social.enabled) {
+            return `<a href="${social.url}" class="social-btn" target="_blank" rel="noopener" title="${social.platform}">
+              <img src="${socialIcons[social.platform]}" alt="${social.platform}">
+            </a>`;
+          } else {
+            return `<span class="social-btn disabled" title="${social.platform} (Coming Soon)">
+              <img src="${socialIcons[social.platform]}" alt="${social.platform}">
+            </span>`;
+          }
+        }).join('') : '';
+        
+        // Build links HTML
+        const linksHTML = brand.links.map(link => `
+          <a href="${link.url}" class="link-button" target="${link.url.startsWith('http') ? '_blank' : '_self'}" rel="noopener">
+            <span class="link-icon">${link.icon}</span>
+            <span class="link-title">${link.title}</span>
+            <span class="link-arrow">→</span>
+          </a>
+        `).join('');
+        
+        // Check if logo exists, otherwise show placeholder
+        const logoHTML = brand.logo 
+          ? `<img src="${brand.logo}" alt="${brand.name} logo" onerror="this.parentElement.innerHTML='<div class=\\'brand-logo-placeholder\\'>${brand.links[0].icon}</div>'">` 
+          : `<div class="brand-logo-placeholder">${brand.links[0].icon}</div>`;
+        
+        card.innerHTML = `
+          <div class="brand-logo">
+            ${logoHTML}
+          </div>
+          <p class="brand-tagline">${brand.tagline}</p>
+          <div class="social-buttons">
+            ${socialHTML}
+          </div>
+          <div class="brand-links">
+            ${linksHTML}
+          </div>
+        `;
+        
+        cardContainer.appendChild(card);
+      });
+      
+      // Update visibility based on screen width
+      updateCardVisibility();
+    })
+    .catch(error => {
+      console.error('Error loading linktree data:', error);
+      document.getElementById('brandCards').innerHTML = 
+        '<p style="text-align: center; color: white;">Unable to load links. Please try again later.</p>';
+    });
+
+  function switchTab(brandId) {
+    // Update active tab
+    document.querySelectorAll('.tab-button').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    document.querySelector(`[data-brand="${brandId}"].tab-button`).classList.add('active');
+    
+    // Update active card
+    document.querySelectorAll('.brand-card').forEach(card => {
+      card.classList.remove('active');
+    });
+    document.querySelector(`[data-brand="${brandId}"].brand-card`).classList.add('active');
+    
+    // Update visibility after changing active card
+    updateCardVisibility();
+    
+    // Update URL without page reload
+    window.history.replaceState({}, '', `?brand=${brandId}`);
+  }
+
+  // Handle window resize
+  window.addEventListener('resize', updateCardVisibility);
+</script>
+
+</body>
+</html>
