@@ -154,6 +154,75 @@ header h1 {
   background: linear-gradient(135deg, rgba(255, 106, 45, 0.10), rgba(255,255,255,0.02));
 }
 
+/* ============================================
+   COOKIE BANNER
+   ============================================ */
+
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  background: rgba(11, 30, 61, 0.95);
+  color: var(--pure-white);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  z-index: 9999;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.cookie-banner.active {
+  display: flex;
+}
+
+.cookie-banner__text {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--soft-sky-gray);
+}
+
+.cookie-banner__text a {
+  color: var(--neon-arc-blue);
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.cookie-banner__btn {
+  background: var(--solar-ember);
+  color: var(--deep-grey);
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cookie-banner__btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 700px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cookie-banner__actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
 .section h2 {
   border-radius: 10px;
   display: inline-block;
@@ -605,6 +674,23 @@ main.gallery {
 .card__title-link {
   text-decoration: none;
   color: var(--text);
+  display: block;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card__title-link:hover {
+  background: var(--violet-pulse);
+  color: var(--pure-white);
+  transform: translateX(3px);
+}
+
+.card__title-link:hover .card__meta {
+  color: var(--pure-white);
+  opacity: 0.9;
 }
 
 .card__title {
