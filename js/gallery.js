@@ -8,7 +8,8 @@
    ========================= */
 const LS_KEYS = {
   order: 'galleryOrder',
-  favs: 'galleryFavs'
+  favs: 'galleryFavs',
+  downloads: 'galleryDownloads'
 };
 
 const persist = {
@@ -28,6 +29,15 @@ const persist = {
   },
   setFavs(set) {
     localStorage.setItem(LS_KEYS.favs, JSON.stringify(Array.from(set)));
+  },
+  getDownloads() {
+    const raw = localStorage.getItem(LS_KEYS.downloads);
+    return raw ? JSON.parse(raw) : {};
+  },
+  incrementDownload(id) {
+    const downloads = this.getDownloads();
+    downloads[id] = (downloads[id] || 0) + 1;
+    localStorage.setItem(LS_KEYS.downloads, JSON.stringify(downloads));
   }
 };
 
@@ -37,6 +47,7 @@ const persist = {
 let masterData = [];
 let order = [];
 let favorites = persist.getFavs();
+let downloads = persist.getDownloads();
 let filters = {
   category: 'All',
   favoritesOnly: false,
@@ -179,6 +190,27 @@ function render() {
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
     link.setAttribute('aria-label', `Open SketchUp: ${item.title}`);
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Show modal immediately
+      showDownloadModal();
+      
+      // Update counters
+      persist.incrementDownload(item.id);
+      updateDownloadCount(item.id);
+      
+      // Log to Supabase (async, non-blocking)
+      logDownloadToSupabase(item.id, item.title);
+      
+      // Open the download link
+      window.open(item.skpUrl, '_blank');
+      
+      // Hide modal after a brief delay
+      setTimeout(() => {
+        hideDownloadModal();
+      }, 1200);
+    });
 
     const title = document.createElement('h2');
     title.className = 'card__title';
@@ -186,7 +218,9 @@ function render() {
 
     const meta = document.createElement('div');
     meta.className = 'card__meta';
-    meta.textContent = "Download";
+    meta.id = `downloads-${item.id}`;
+    const count = downloads[item.id] || 0;
+    meta.textContent = count > 0 ? `Downloaded ${count} ${count === 1 ? 'time' : 'times'}` : 'Download';
 
     link.appendChild(title);
     body.appendChild(link);
@@ -410,6 +444,58 @@ function dropped(e) {
 function dragEnd(e) {
   e.currentTarget.classList.remove('dragging');
   dragId = null;
+}
+
+/* =========================
+   DOWNLOAD COUNTER
+   ========================= */
+function updateDownloadCount(id) {
+  const downloads = persist.getDownloads();
+  const count = downloads[id] || 0;
+  const metaEl = document.getElementById(`downloads-${id}`);
+  if (metaEl) {
+    metaEl.textContent = count > 0 ? `Downloaded ${count} ${count === 1 ? 'time' : 'times'}` : 'Download';
+  }
+}
+
+function showDownloadModal() {
+  const modal = document.getElementById('downloadModal');
+  if (modal) modal.classList.add('active');
+}
+
+function hideDownloadModal() {
+  const modal = document.getElementById('downloadModal');
+  if (modal) modal.classList.remove('active');
+}
+
+async function logDownloadToSupabase(componentId, componentTitle) {
+  // Check if Supabase is configured
+  if (!SUPABASE_URL || SUPABASE_URL.includes('YOUR_PROJECT_URL')) {
+    console.log('Supabase not configured yet. Download logged locally only.');
+    return;
+  }
+
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${SUPABASE_DOWNLOADS_TABLE}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+      },
+      body: JSON.stringify({
+        component_id: componentId,
+        component_title: componentTitle,
+        user_agent: navigator.userAgent
+      })
+    });
+
+    if (!response.ok) {
+      console.warn('Failed to log download to Supabase:', response.statusText);
+    }
+  } catch (error) {
+    console.warn('Error logging download to Supabase:', error);
+  }
 }
 
 /* =========================
