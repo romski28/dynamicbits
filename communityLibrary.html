@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Component Gallery – All Features</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -69,6 +70,63 @@
   </button>
 </div>
 
+<!-- Download Modal -->
+<div id="downloadModal" class="download-modal">
+  <div class="download-modal-content">
+    <div class="spinner"></div>
+    <p>Getting your component...</p>
+  </div>
+</div>
+
+<style>
+  .download-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .download-modal.active {
+    display: flex;
+  }
+
+  .download-modal-content {
+    background: var(--pure-white);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .download-modal-content p {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--deep-space-blue);
+  }
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border: 5px solid var(--soft-sky-gray);
+    border-top: 5px solid var(--violet-pulse);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+
 <section style="background: var(--deep-space-blue); padding: 2rem 1rem;">
   <footer>
     <p>Follow Worqbox for updates and new components:</p>
@@ -85,6 +143,7 @@
   </footer>
 </section>
 
+<script src="js/supabase-config.js"></script>
 <script src="js/gallery.js"></script>
 <script>
   // Fetch the component data and initialize the gallery

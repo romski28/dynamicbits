@@ -187,5 +187,35 @@ A fun, collectible “Smart Bits” card system for each component</p>
   });
 </script>
 
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+	<div class="cookie-banner__text">
+		We use cookies and localStorage to improve your experience and understand site usage. By continuing, you agree to our
+		<a href="assets/docs/privacy.pdf">Privacy Policy</a>.
+	</div>
+	<div class="cookie-banner__actions">
+		<button id="cookieAccept" class="cookie-banner__btn" type="button">Got it</button>
+	</div>
+</div>
+
+<script>
+	(function () {
+		const key = 'db_cookie_consent';
+		const banner = document.getElementById('cookieBanner');
+		const btn = document.getElementById('cookieAccept');
+
+		if (!banner || !btn) return;
+
+		const hasConsent = localStorage.getItem(key) === 'true';
+		if (!hasConsent) {
+			banner.classList.add('active');
+		}
+
+		btn.addEventListener('click', () => {
+			localStorage.setItem(key, 'true');
+			banner.classList.remove('active');
+		});
+	})();
+</script>
+
 </body>
 </html>
