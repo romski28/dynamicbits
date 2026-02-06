@@ -69,12 +69,12 @@
      */
     function computeFanTransform(idx) {
       const delta = idx - CENTER_INDEX;
-      if (delta === 0) {
-        return 'translate(-50%, -50%) rotate(0deg)';
-      }
       const angle = delta * ANGLE_STEP;
       const radius = Math.abs(delta) * RADIUS_PER_STEP;
-      return `translate(-50%, -50%) rotate(${angle}deg) translateY(${-radius}px)`;
+      // Move center card up proportionally with the spread
+      const centerUpward = RADIUS_PER_STEP * CENTER_INDEX * 0.5;
+      const translateY = -(radius || centerUpward);
+      return `translate(-50%, -50%) rotate(${angle}deg) translateY(${translateY}px)`;
     }
 
     /**
@@ -84,12 +84,8 @@
       fanEl.classList.add('is-fanned');
       cards.forEach((card, idx) => {
         card.style.transform = computeFanTransform(idx);
-        const delta = idx - CENTER_INDEX;
-        const z =
-          delta === 0
-            ? 2000
-            : 1000 + 100 * Math.sign(delta) + 10 * Math.abs(delta);
-        card.style.zIndex = String(z);
+        // Simple left-to-right stacking: leftmost at bottom, rightmost on top
+        card.style.zIndex = String(1000 + idx);
       });
     }
 
@@ -101,6 +97,7 @@
       fanEl.style.transform = 'scale(1)';
       cards.forEach((card, idx) => {
         card.style.transform = 'translate(-50%, -50%) rotate(0deg)';
+        // Keep the last card (idx 4) on top at the end to match the start
         card.style.zIndex = String(100 + idx);
       });
     }
